@@ -1,0 +1,28 @@
+<% if @namespace %>
+  <div id="cukes_logo">&nbsp;</div>
+  <div id="cukes_links">
+    <a href="#">WPS Tools Team</a>
+  </div>
+
+  <div class="requirements">
+  
+	<% if features && !features.empty? %>
+      <%= keyword_table(features) %>
+    <% else %>
+      <!-- No Features Defined -->
+      <div class="none">No Features Defined</div>
+    <% end %>
+
+    
+    <div id="directory" style="margin-left: 40px;">
+      <div class="title"><span class="name">Tags</span></div>
+    </div>
+    <div class="tags">
+      <%= tags.collect {|tag| linkify(tag,tag.value) }.join(",\n") %>
+    </div>
+    
+    
+  </div>
+<% end %>
+
+
